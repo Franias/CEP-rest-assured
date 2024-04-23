@@ -29,12 +29,12 @@ public class CEPTest {
           assertThat().
           statusCode(200).
           contentType(equalTo("application/json; charset=utf-8")).
-          body("localidade", equalTo("São Paulo"));;
+          body("localidade", equalTo("São Paulo"));
 
     }
 
     @Test
-    public void requestCEPInvalido_checkResponseCode_expect200() {
+    public void requestCEPInvalido_checkResponseCode_expect400() {
       String cepInvalido = "";
 
       given().
