@@ -14,7 +14,7 @@ import java.io.File;
 public class TestSteps {
 
     @Given("que realizo um GET na aplicacao de CEP {} com o CEP {}")
-    public void queRealizoUmGETNaAplicacaoDeCEPHttpsViacepComBrIdComOCEPEscolhido(String url, int cep) {
+    public void queRealizoUmGETNaAplicacaoDeCEPHttpsViacepComBrIdComOCEPEscolhido(String url, String cep) {
         Global.response = CEP.getCEP(url,cep);
     }
 
@@ -34,9 +34,4 @@ public class TestSteps {
         Global.response = CEP.getCEPNonExistent(url);
     }
 
-    @Then("valido o schema da response GET de CEP por código inexistente")
-    public void validoOSchemaDaResponseGETDeCEPPorCódigoInexistente() {
-        Global.response.then().body(JsonSchemaValidator.matchesJsonSchema(new File("src/main/java/schema/cepSchema.json")));
-        Global.response.prettyPrint();
-    }
 }

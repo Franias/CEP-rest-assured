@@ -13,9 +13,9 @@ public class CEP {
         return response;
     }
 
-    public static Response getCEP(String url, int CEP) {
+    public static Response getCEP(String url, String CEP) {
         Response response = given()
-            .get(url+ Global.CEP);
+            .get(url+ CEP+"/json");
         return response;
     }
 

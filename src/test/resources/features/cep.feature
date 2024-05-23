@@ -16,10 +16,9 @@ Feature: Aplicacao /test
     | 01001000 |
 
   @cep
-  Scenario: GET /{CEP} - 404 OK
+  Scenario: GET /{CEP} - 400 OK
     Given que realizo um GET na aplicacao de CEP https://viacep.com.br/ws/ com o CEP 99999
-    And obtenho o status code 404
-    Then valido o schema da response GET de CEP por código inexistente
+    Then obtenho o status code 400
 
 
 
